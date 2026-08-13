@@ -1,0 +1,94 @@
+<div id="gameShell">
+  <canvas id="game" aria-label="Rift Ascension game canvas"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <div class="rank-badge"><span id="rankText">E</span><small>RANK</small></div>
+      <div class="bars">
+        <div class="bar-row"><span>HP</span><div class="bar"><i id="hpBar"></i></div><b id="hpText">100 / 100</b></div>
+        <div class="bar-row"><span>MP</span><div class="bar mana"><i id="mpBar"></i></div><b id="mpText">60 / 60</b></div>
+        <div class="bar-row"><span>XP</span><div class="bar xp"><i id="xpBar"></i></div><b id="xpText">0 / 100</b></div>
+      </div>
+    </div>
+
+    <div class="hud-center">
+      <div id="comboBox">COMBO <strong id="comboText">0</strong></div>
+      <div id="bossWrap" class="hidden">
+        <div id="bossName">STONE EXECUTIONER</div>
+        <div class="boss-bar"><i id="bossBar"></i></div>
+      </div>
+    </div>
+
+    <div class="hud-right">
+      <div class="level-card">LV <strong id="levelText">1</strong></div>
+      <div class="weapon-card"><small>WEAPON</small><strong id="weaponText">Damaged Dagger</strong></div>
+    </div>
+  </div>
+
+  <div id="questBox" class="hidden">
+    <small>SYSTEM QUEST</small>
+    <strong id="questTitle">Survival Protocol</strong>
+    <span id="questProgress">Defeat Rift creatures: 0 / 12</span>
+  </div>
+
+  <div id="systemToast" aria-live="polite">
+    <small id="toastLabel">SYSTEM</small>
+    <strong id="toastTitle">PLAYER REGISTRATION COMPLETE</strong>
+    <span id="toastBody">You may now gain experience.</span>
+  </div>
+
+  <div id="startScreen" class="overlay active">
+    <div class="panel intro-panel">
+      <p class="eyebrow">2D SIDE-SCROLLING ACTION RPG</p>
+      <h1>RIFT <span>ASCENSION</span></h1>
+      <p class="story">Portals have opened across the world. Hunters awaken at a fixed rank—except you. A mysterious System has granted you the ability to level up.</p>
+      <div class="instructions">
+        <div><kbd>A</kbd><kbd>D</kbd> Move</div>
+        <div><kbd>W</kbd> Jump</div>
+        <div><kbd>J</kbd> Light attack</div>
+        <div><kbd>K</kbd> Heavy attack</div>
+        <div><kbd>Space</kbd> Dash</div>
+        <div><kbd>Q</kbd> Rift Wave</div>
+      </div>
+      <button id="startBtn" class="primary-btn">ENTER THE RIFT</button>
+      <button id="wipeBtn" class="text-btn">Erase saved progression</button>
+    </div>
+  </div>
+
+  <div id="levelPanel" class="overlay">
+    <div class="panel level-panel">
+      <p class="eyebrow">LEVEL UP</p>
+      <h2>Choose one attribute</h2>
+      <p>Health and mana have been fully restored.</p>
+      <div class="stat-grid">
+        <button data-stat="strength"><strong>STR</strong><span>More melee damage</span><b id="strengthValue">1</b></button>
+        <button data-stat="agility"><strong>AGI</strong><span>Faster movement and attacks</span><b id="agilityValue">1</b></button>
+        <button data-stat="vitality"><strong>VIT</strong><span>More health and defense</span><b id="vitalityValue">1</b></button>
+        <button data-stat="intelligence"><strong>INT</strong><span>More mana and skill damage</span><b id="intelligenceValue">1</b></button>
+        <button data-stat="perception"><strong>PER</strong><span>Higher critical chance</span><b id="perceptionValue">1</b></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="endScreen" class="overlay">
+    <div class="panel end-panel">
+      <p class="eyebrow" id="endEyebrow">SYSTEM MESSAGE</p>
+      <h2 id="endTitle">MISSION FAILED</h2>
+      <p id="endBody">The Rift consumed another Hunter.</p>
+      <button id="restartBtn" class="primary-btn">RESTART DUNGEON</button>
+    </div>
+  </div>
+
+  <div id="touchControls">
+    <div class="touch-left">
+      <button data-hold="left">◀</button>
+      <button data-hold="right">▶</button>
+    </div>
+    <div class="touch-right">
+      <button data-tap="jump">JUMP</button>
+      <button data-tap="attack">ATK</button>
+      <button data-tap="dash">DASH</button>
+      <button data-tap="skill">Q</button>
+    </div>
+  </div>
+</div>
